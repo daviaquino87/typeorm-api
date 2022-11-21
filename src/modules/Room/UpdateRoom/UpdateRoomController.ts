@@ -22,7 +22,9 @@ export class UpdateRoomController {
         name,
       });
 
-      return response.status(200).json(data);
+      return response.status(200).json({
+        msg: "updated room!",
+      });
     } catch (error) {
       console.log(error);
       return response.status(500).json({ msg: "internal error server!" });

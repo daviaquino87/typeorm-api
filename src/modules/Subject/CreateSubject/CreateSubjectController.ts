@@ -10,7 +10,7 @@ export class CreateSubjectController {
     }
 
     try {
-      const newSubject = subjectService.create({ name });
+      const newSubject = await subjectService.create({ name });
       const data = await subjectService.save(newSubject);
 
       return response.status(201).json(data);

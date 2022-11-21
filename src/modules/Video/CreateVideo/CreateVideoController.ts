@@ -10,14 +10,14 @@ export class CreateVideoController {
 
     if (!title || !url) {
       return response
-        .status(400)
+        .status(404)
         .json({ msg: "the filds title and url is required!" });
     }
 
     const room = await roomService.findOneBy({ id: Number(room_id) });
     if (!room) {
       return response
-        .status(400)
+        .status(404)
         .json({ msg: "The specified room does not exist!" });
     }
 
@@ -27,7 +27,8 @@ export class CreateVideoController {
 
       return response.status(201).json(data);
     } catch (error) {
-      return response.status(500).json({ msg: "error by create room" });
+      console.log(error);
+      return response.status(500).json({ msg: "internal error server!" });
     }
   }
 }

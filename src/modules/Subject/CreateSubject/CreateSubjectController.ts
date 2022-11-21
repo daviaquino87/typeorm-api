@@ -15,7 +15,8 @@ export class CreateSubjectController {
 
       return response.status(201).json(data);
     } catch (error) {
-      return response.status(500).json({ msg: "error by create subject" });
+      console.log(error);
+      return response.status(500).json({ msg: "internal error server!" });
     }
   }
 }

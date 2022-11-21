@@ -7,12 +7,14 @@ export class ListRoomController {
       const room = await roomService.find({
         relations: {
           subjects: true,
+          videos: true,
         },
       });
 
       return response.status(200).json(room);
     } catch (error) {
-      return response.status(500).json({ msg: "error by create room" });
+      console.log(error);
+      return response.status(500).json({ msg: "internal error server!" });
     }
   }
 }

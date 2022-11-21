@@ -13,7 +13,7 @@ export class CreateSubjectController {
       const newSubject = subjectService.create({ name });
       const data = await subjectService.save(newSubject);
 
-      return response.json(data);
+      return response.status(201).json(data);
     } catch (error) {
       return response.status(500).json({ msg: "error by create subject" });
     }

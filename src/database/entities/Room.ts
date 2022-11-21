@@ -13,7 +13,7 @@ export class Room {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "text", unique: true })
+  @Column({ type: "text" })
   name: string;
 
   @Column({ type: "text", nullable: true })

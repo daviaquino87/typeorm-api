@@ -37,12 +37,12 @@ export class AddSubjectController {
           .json({ msg: "The specified subject does not exist!" });
       }
 
-      const update = {
+      const RoomUpdate = {
         ...room,
         subjects: [subject],
       };
 
-      const data = await roomService.save(update);
+      const data = await roomService.save(RoomUpdate);
 
       return response.status(204).json({ data });
     } catch (error) {

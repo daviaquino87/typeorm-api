@@ -8,7 +8,7 @@ export class DeleteRoomController {
     if (!room_id) {
       return response
         .status(400)
-        .json({ msg: "the fild room_id is required!" });
+        .json({ msg: "the param room_id is required!" });
     }
 
     try {
